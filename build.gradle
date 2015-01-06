@@ -35,6 +35,10 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-jersey")
     compile("org.springframework.boot:spring-boot-starter-security")
 
+    compile("org.springframework.hateoas:spring-hateoas:0.16.0.RELEASE")
+    // needed when @EnableEntityLinks is used
+    compile("org.springframework.plugin:spring-plugin-core:1.1.0.RELEASE")
+
     // HSQLDB for embedded database support
     compile("org.hsqldb:hsqldb")
     // Utilities

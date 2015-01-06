@@ -1,4 +1,4 @@
-package pl.codeleak.demo.health;
+package pl.codeleak.demo.core;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

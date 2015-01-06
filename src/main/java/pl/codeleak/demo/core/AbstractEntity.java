@@ -1,4 +1,4 @@
-package pl.codeleak.demo.customer;
+package pl.codeleak.demo.core;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;

@@ -1,4 +1,4 @@
-package pl.codeleak.demo.customer;
+package pl.codeleak.demo.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,14 +8,14 @@ import org.springframework.boot.test.TestRestTemplate;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 import pl.codeleak.demo.Application;
+import pl.codeleak.demo.core.Customer;
 import pl.codeleak.support.Page;
 import pl.codeleak.support.PageAssertion;
-
-import java.net.URI;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -23,6 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
 @IntegrationTest("server.port=9000")
+@ActiveProfiles("web")
 public class FindAllCustomersTest {
 
     private RestTemplate restTemplate = new TestRestTemplate("demo", "123");

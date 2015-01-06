@@ -1,9 +1,12 @@
-package pl.codeleak.demo.customer;
+package pl.codeleak.demo.web;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
+import pl.codeleak.demo.core.Customer;
+import pl.codeleak.demo.core.CustomerRepository;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -14,6 +17,7 @@ import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 import java.util.List;
 
+@Profile("web")
 @Component
 @Path("/customer")
 @Produces(MediaType.APPLICATION_JSON)
