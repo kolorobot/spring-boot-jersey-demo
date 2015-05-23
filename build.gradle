@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.2.0.RELEASE'
+        springBootVersion = '1.2.3.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -13,7 +13,10 @@ buildscript {
     }
 }
 
+
+
 apply plugin: 'java'
+apply plugin: 'groovy'
 apply plugin: 'spring-boot'
 
 jar {
@@ -30,7 +33,7 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-undertow:1.2.0.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-undertow")
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-jersey")
     compile("org.springframework.boot:spring-boot-starter-security")
@@ -46,8 +49,13 @@ dependencies {
     // AssertJ
     testCompile("org.assertj:assertj-core:1.7.0")
     testCompile("org.springframework.boot:spring-boot-starter-test")
+    // Groovy
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.3'
+    testCompile 'com.github.groovy-wslite:groovy-wslite:1.1.0'
+    testCompile 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
+    testCompile 'org.spockframework:spock-spring:1.0-groovy-2.4'
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.2'
+    gradleVersion = '2.3'
 }
