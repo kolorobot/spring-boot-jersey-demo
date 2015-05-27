@@ -24,7 +24,12 @@ class SaveCustomerGroovyTest {
         def response = client.post(
                 path: '/customer',
                 requestContentType: "application/json",
-                body: [firstname: "John", lastname: "Doe", emailAddress: [value: "john@dummy.com"]]
+                body: [
+                        firstname: "John",
+                        lastname: "Doe",
+                        emailAddress:
+                                [value: "john@dummy.com"]
+                ]
         )
 
         assert 201 == response.status

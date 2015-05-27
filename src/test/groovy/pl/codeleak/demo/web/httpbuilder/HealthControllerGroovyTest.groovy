@@ -4,13 +4,10 @@ import groovyx.net.http.RESTClient
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.springframework.boot.test.SpringApplicationConfiguration
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
-import pl.codeleak.demo.Application
 import pl.codeleak.support.ApplicationTest
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
 @ApplicationTest
 class HealthControllerGroovyTest {
 

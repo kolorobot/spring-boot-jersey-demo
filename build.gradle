@@ -51,8 +51,8 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test")
     // Groovy
     testCompile 'org.codehaus.groovy:groovy-all:2.4.3'
-    testCompile 'com.github.groovy-wslite:groovy-wslite:1.1.0'
     testCompile 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
+    testCompile 'com.github.groovy-wslite:groovy-wslite:1.1.0'
     testCompile 'org.spockframework:spock-spring:1.0-groovy-2.4'
 }
 
