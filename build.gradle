@@ -1,20 +1,24 @@
 buildscript {
-    ext {
-        springBootVersion = '1.2.5.RELEASE'
-    }
+    ext['dependencyPluginVersion'] = '0.5.3.RELEASE'
+    ext['platformVersion'] = '1.1.3.RELEASE'
+    ext['springBootVersion'] = '1.2.5.RELEASE'
+    // custom versions of platform dependencies
+    ext['spring.version'] = '4.2.1.RELEASE'
+
     repositories {
+        jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath "io.spring.gradle:dependency-management-plugin:${dependencyPluginVersion}"
     }
     configurations {
         compile.exclude module: "spring-boot-starter-tomcat"
     }
 }
 
-
-
+apply plugin: 'io.spring.dependency-management'
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'spring-boot'
@@ -30,39 +34,43 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
-    compile('org.springframework:spring-webmvc:4.2.0.RELEASE')
-    compile('org.springframework:spring-orm:4.2.0.RELEASE')
-    compile('org.springframework:spring-aspects:4.2.0.RELEASE')
-    testCompile('org.springframework:spring-test:4.2.0.RELEASE')
+    dependencyManagement {
+        imports {
+            mavenBom "io.spring.platform:platform-bom:${platformVersion}"
+        }
+    }
 
-    compile("org.springframework.boot:spring-boot-starter-undertow")
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile "org.springframework.boot:spring-boot-starter-undertow"
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa"
 
-    compile("org.springframework.boot:spring-boot-starter-jersey")
-    compile("org.springframework.boot:spring-boot-starter-security")
+    compile "org.springframework.boot:spring-boot-starter-jersey"
+    compile "org.springframework.boot:spring-boot-starter-security"
 
-    compile("org.springframework.hateoas:spring-hateoas:0.16.0.RELEASE")
+    compile "org.springframework.hateoas:spring-hateoas:0.16.0.RELEASE"
     // needed when @EnableEntityLinks is used
-    compile("org.springframework.plugin:spring-plugin-core:1.1.0.RELEASE")
+    compile "org.springframework.plugin:spring-plugin-core:1.1.0.RELEASE"
 
     // HSQLDB for embedded database support
-    compile("org.hsqldb:hsqldb")
+    compile "org.hsqldb:hsqldb"
     // Utilities
-    compile("com.google.guava:guava:18.0")
+    compile "com.google.guava:guava"
     // AssertJ
-    testCompile("org.assertj:assertj-core:1.7.0")
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile "org.assertj:assertj-core:1.7.0"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
     // Groovy
     testCompile 'org.codehaus.groovy:groovy-all:2.4.3'
     testCompile 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
     testCompile 'com.github.groovy-wslite:groovy-wslite:1.1.0'
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
     testCompile 'org.spockframework:spock-spring:1.0-groovy-2.4'
     // JUnitParams
     testCompile "pl.pragmatists:JUnitParams:1.0.4"
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.3'
+    gradleVersion = '2.6'
 }

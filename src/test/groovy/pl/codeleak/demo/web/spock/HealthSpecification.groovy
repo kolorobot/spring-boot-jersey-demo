@@ -11,9 +11,10 @@ import spock.lang.Specification
 @ApplicationTest
 class HealthSpecification extends Specification {
 
+    def client = new RESTClient("http://localhost:9000")
+
     def "Should return that Jersey is Up and Running"() {
         setup:
-        def client = new RESTClient("http://localhost:9000")
         client.auth.basic("demo", "123")
 
         when:
@@ -32,7 +33,6 @@ class HealthSpecification extends Specification {
 
     def "Should return that Spring MVC is Up and Running"() {
         setup:
-        def client = new RESTClient("http://localhost:9000")
         client.auth.basic("demo", "123")
 
         when:
