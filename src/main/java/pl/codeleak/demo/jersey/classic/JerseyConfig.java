@@ -1,10 +1,8 @@
-package pl.codeleak.demo.web;
+package pl.codeleak.demo.jersey.classic;
 
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
-import pl.codeleak.demo.web.CustomerController;
-import pl.codeleak.demo.web.HealthController;
 
 import javax.ws.rs.ApplicationPath;
 

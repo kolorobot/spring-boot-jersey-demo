@@ -1,4 +1,4 @@
-package pl.codeleak.demo.hateoas;
+package pl.codeleak.demo.jersey.hateoas;
 
 import org.springframework.hateoas.ResourceSupport;
 

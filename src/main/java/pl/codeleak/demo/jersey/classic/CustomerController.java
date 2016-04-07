@@ -1,4 +1,4 @@
-package pl.codeleak.demo.web;
+package pl.codeleak.demo.jersey.classic;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.Page;

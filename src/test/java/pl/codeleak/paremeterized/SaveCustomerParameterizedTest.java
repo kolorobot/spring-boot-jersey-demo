@@ -1,4 +1,4 @@
-package pl.codeleak.demo.web;
+package pl.codeleak.paremeterized;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;

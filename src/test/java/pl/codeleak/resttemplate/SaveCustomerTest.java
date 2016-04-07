@@ -1,4 +1,4 @@
-package pl.codeleak.demo.web;
+package pl.codeleak.resttemplate;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

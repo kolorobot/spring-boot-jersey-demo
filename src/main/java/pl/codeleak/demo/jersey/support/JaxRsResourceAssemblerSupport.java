@@ -1,4 +1,4 @@
-package pl.codeleak.demo.support;
+package pl.codeleak.demo.jersey.support;
 
 import org.springframework.hateoas.ResourceSupport;
 import org.springframework.hateoas.jaxrs.JaxRsLinkBuilder;

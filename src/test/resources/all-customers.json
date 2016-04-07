@@ -1,0 +1,36 @@
+{
+  "content": [
+    {
+      "emailAddress": {
+        "value": "carter@dmband.com"
+      },
+      "id": 2,
+      "firstname": "Carter",
+      "lastname": "Beauford"
+    },
+    {
+      "id": 1,
+      "firstname": "Dave",
+      "lastname": "Matthews",
+      "emailAddress": {
+        "value": "dave@dmband.com"
+      }
+    },
+    {
+      "lastname": "Tinsley",
+      "firstname": "Boyd",
+      "emailAddress": {
+        "value": "boyd@dmband.com"
+      },
+      "id": 3
+    }
+  ],
+  "totalElements": 3,
+  "last": true,
+  "size": 20,
+  "totalPages": 1,
+  "number": 0,
+  "numberOfElements": 3,
+  "sort": null,
+  "first": true
+}
